@@ -3,16 +3,18 @@ import Router from 'vue-router'
 
 Vue.use(Router)
 
+import Intro from '../components/Intro'
+
 export default new Router({
-  routes: [
-    {
-      path: '/',
-      name: 'landing-page',
-      component: require('@/components/LandingPage').default
-    },
-    {
-      path: '*',
-      redirect: '/'
-    }
-  ]
+    routes: [
+        {
+            path: '/',
+            name: 'landing-page',
+            component: Intro
+        },
+        {
+            path: '*',
+            redirect: '/'
+        }
+    ]
 })

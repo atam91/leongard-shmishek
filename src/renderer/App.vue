@@ -10,6 +10,10 @@
   }
 </script>
 
-<style>
-  /* CSS */
+<style lang="stylus">
+  html, body, #app
+    height 100%
+
+  body
+    margin 0
 </style>
