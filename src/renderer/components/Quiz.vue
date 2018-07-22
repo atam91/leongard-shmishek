@@ -6,31 +6,34 @@
         <div class="quiz__question">{{ currentQuestion }}</div>
 
         <div class="quiz__buttons">
-            <button class="quiz__button" @click="takeAnswer('Y')">Да</button>
-            <button class="quiz__button" @click="takeAnswer('N')">Нет</button>
+            <button class="quiz__button" @click="takeAnswer(YES)">Да</button>
+            <button class="quiz__button" @click="takeAnswer(NO)">Нет</button>
         </div>
     </div>
 </template>
 
 <script>
-    import questions from '../data/questions'
+    import { QUESTIONS } from '../data/test'
+    import { YES, NO } from '../data/constants'
     import { setAnswers } from '../services/quiz'
 
     export default {
         data: () => ({
-            questions,
-            answers: []
+            QUESTIONS,
+            answers: [],
+            YES,
+            NO
         }),
 
         computed: {
             currentQuestion() {
-                return this.questions[this.answers.length];
+                return QUESTIONS[this.answers.length];
             },
             number() {
                 return this.answers.length + 1;
             },
             questionsCount() {
-                return this.questions.length;
+                return QUESTIONS.length;
             }
         },
 
@@ -38,7 +41,7 @@
             takeAnswer(answer) {
                 this.answers.push(answer);
 
-                if (this.answers.length === this.questions.length) {
+                if (this.answers.length === QUESTIONS.length) {
                     setAnswers(this.answers);
                     this.$router.push('/result');
                 }
