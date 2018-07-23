@@ -59,7 +59,7 @@
         flex-direction column
         justify-content center
         text-align center
-        margin 0 50px
+        margin 0 100px
         color #2c3e50;
 
         &__status
