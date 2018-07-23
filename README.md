@@ -14,7 +14,11 @@ npm run dev
 # build electron application for production
 npm run build
 
+# build win64 app
+npm run build:win
 
+# build win32 app
+npm run build:win32
 ```
 
 ---
