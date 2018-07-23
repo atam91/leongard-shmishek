@@ -15,12 +15,14 @@
 <script>
     import { QUESTIONS } from '../data/test'
     import { YES, NO } from '../data/constants'
-    import { setAnswers } from '../services/quiz'
+    import { mutateStateProp } from '../services/simpleStore'
+
+    const myAnswers = [ "Yes", "Yes", "No", "Yes", "Yes", "Yes", "Yes", "Yes", "No", "No", "Yes", "No", "Yes", "Yes", "No", "Yes", "Yes", "Yes", "Yes", "Yes", "Yes", "Yes", "No", "Yes", "Yes", "Yes", "Yes", "No", "Yes", "No", "No", "Yes", "Yes", "Yes", "Yes", "Yes", "Yes", "No", "Yes", "No", "Yes", "No", "No", "Yes", "Yes", "Yes", "Yes", "Yes", "No", "Yes", "Yes", "Yes", "No", "Yes", "No", "No", "Yes", "Yes", "Yes", "Yes", "Yes", "Yes", "No", "Yes", "Yes", "Yes", "Yes", "Yes", "No", "Yes", "No", "No", "Yes", "No", "Yes", "Yes", "Yes", "Yes", "Yes", "Yes", "No", "Yes", "Yes", "Yes", "Yes", "No", "No", "Yes", "No", "No", "No", "No", "Yes", "No", "Yes", "No" ];
 
     export default {
         data: () => ({
             QUESTIONS,
-            answers: [],
+            answers: [ ...myAnswers ],
             YES,
             NO
         }),
@@ -42,7 +44,7 @@
                 this.answers.push(answer);
 
                 if (this.answers.length === QUESTIONS.length) {
-                    setAnswers(this.answers);
+                    mutateStateProp('answers', this.answers);
                     this.$router.push('/result');
                 }
             }

@@ -25,16 +25,3 @@ export const ACCENTUATED_PERSONALITIES = {
     DYSTHYMIC,
     EXALTED
 };
-
-export const ACCENTUATED_PERSONALITIES_NAMES = {
-    [HYPER]: 'Гипертимный',
-    [STUCK]: 'Застревающие',
-    [EMOTIONAL]: 'Эмотивные',
-    [PEDANTIC]: 'Педантичные',
-    [DISTURBING]: 'Тревожные',
-    [CYCLOTIMIC]: 'Циклотимные',
-    [DEMONSTRATIVE]: 'Демонстративные',
-    [EXCITABLE]: 'Возбудимые',
-    [DYSTHYMIC]: 'Дистимичные',
-    [EXALTED]: 'Экзальтированные',
-};

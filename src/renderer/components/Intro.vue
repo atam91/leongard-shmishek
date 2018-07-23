@@ -3,12 +3,25 @@
         <div class="intro__block">
             <h1 class="intro__header">Добро пожаловать!</h1>
 
-            <button class="intro__button" @click="$router.push('/quiz')">
+            <button class="intro__button" @click="startTest">
                 Приступить к тестированию
             </button>
         </div>
     </div>
 </template>
+
+<script>
+    import { mutateStateProp } from "../services/simpleStore";
+
+    export default {
+        methods: {
+            startTest() {
+                mutateStateProp('startTime', Date.now());
+                this.$router.push('/quiz');
+            }
+        }
+    }
+</script>
 
 <style lang="stylus" scoped>
     .intro
